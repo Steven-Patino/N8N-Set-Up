@@ -3,6 +3,9 @@ services:
   n8n:
     image: docker.n8n.io/n8nio/n8n:latest
     container_name: n8n
+    # Conecta el contenedor a la red personalizada para comunicación con PostgreSQL
+    networks:
+      - n8n_net
     ports:
       - "${N8N_PORT:-5678}:5678"
     environment:
@@ -32,3 +35,8 @@ services:
 volumes:
   n8n_data:
     name: n8n_data
+
+networks:
+  n8n_net:
+    name: n8n_net
+    external: true
