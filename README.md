@@ -1,4 +1,4 @@
-# n8n Starter – Tutorial Teórico (ES)
+# N8N SET UP– Tutorial Teórico (ES)
 
 **Este repositorio es una guía de aprendizaje para ejecutar y entender n8n con Docker.**
 Incluye conceptos, arquitectura, instalación, configuración, seguridad y ejemplos prácticos.
