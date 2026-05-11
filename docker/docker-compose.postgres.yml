@@ -1,0 +1,27 @@
+# Servicio de base de datos PostgreSQL usado por n8n en producción
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: n8n-postgres
+    environment:
+      - POSTGRES_DB=${DB_POSTGRESDB_DATABASE}
+      - POSTGRES_USER=${DB_POSTGRESDB_USER}
+      - POSTGRES_PASSWORD=${DB_POSTGRESDB_PASSWORD}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - n8n_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_POSTGRESDB_USER} -d ${DB_POSTGRESDB_DATABASE}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pg_data:
+    name: pg_data
+
+networks:
+  n8n_net:
+    name: n8n_net
