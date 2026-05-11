@@ -31,9 +31,7 @@ Incluye conceptos, arquitectura, instalación, configuración, seguridad y ejemp
 │  ├─ 07-configuracion.md
 │  ├─ 08-seguridad.md
 │  ├─ 09-escalado-rendimiento.md
-│  ├─ 10-logs-monitoreo.md
-│  ├─ 15-ejercicios-teoricos.md
-│  └─ 99-recursos.md
+│  └─ 10-logs-monitoreo.md
 ├─ docker/
 │  ├─ docker-compose.n8n.yml
 │  ├─ docker-compose.postgres.yml
